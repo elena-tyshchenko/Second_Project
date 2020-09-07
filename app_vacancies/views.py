@@ -7,24 +7,24 @@ from django.views import View
 
 class MainView(View):
     def get(self, request):
-        return HttpResponse("Это главная")
+        return render(request, 'index.html')
 
 
 class VacanciesView(View):
     def get(self, request):
-        return HttpResponse("Здесь будет список вакансий")
+        return render(request, 'vacancies.html')
 
 
 class SpecializationView(View):
     def get(self, request, specialization):
-        return HttpResponse("Здесь будет список вакансий по специализации")
+        return render(request, 'vacancies.html')
 
 
 class CompaniesView(View):
     def get(self, request, id):
-        return HttpResponse("Здесь будет карточка компании")
+        return render(request, 'company.html')
 
 
 class VacancyView(View):
     def get(self, request, id):
-        return HttpResponse("Здесь будет описание вакансии")
+        return render(request, 'vacancy.html')
