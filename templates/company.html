@@ -17,48 +17,18 @@
                     <div class="card-body px-4">
                         <div class="row">
                             <div class="col-12 col-md-8 col-lg-9">
-                                <h2 class="h2 pb-2"> Build-Engineer (Билд-инженер)</h2>
-                                <p class="mb-2">Бэкенд • Старший (Senior) • C# • ASP.NET MVC • MySQL • Git</p>
-                                <p>От 180 000 до 250 000 руб.</p>
-                                <p class="text-muted pt-1">9 декабря</p>
+                                <h2 class="h2 pb-2">{{ vacancy.title }}</h2>
+                                <p class="mb-2">{{ vacancy.description }}</p>
+                                <p>От {{ vacancy.salary_min }} до {{ vacancy.salary_max }} руб.</p>
+                                <p class="text-muted pt-1">{{ vacancy.published_at|date:"d F" }}</p>
                             </div>
                             <div class="col-12 col-md-4 col-lg-3 d-flex align-items-end">
-                                <img src="https://place-hold.it/130x80" width="130" height="80" alt="">
+                                <img src="{{ vacancy.company.logo }}" width="130" height="80" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
                 {% endfor %}
-                <!--          <div class="card mb-4">-->
-                <!--            <div class="card-body px-4">-->
-                <!--              <div class="row">-->
-                <!--                <div class="col-12 col-md-8 col-lg-9">-->
-                <!--                  <h2 class="h2 pb-2">Менеджер проектов (разработка)</h2>-->
-                <!--                  <p>Бэкенд • Средний (Middle) • PHP • PostgreSQL • MySQL • Node.js • Laravel • Symfony • Yii framework • Sails.js • Rabbitmq • Kafka</p>-->
-                <!--                  <p class="mb-2">От 180 000 до 250 000 руб.</p>-->
-                <!--                  <p class="text-muted pt-1">9 декабря</p>-->
-                <!--                </div>-->
-                <!--                <div class="col-12 col-md-4 col-lg-3 d-flex align-items-end">-->
-                <!--                  <img src="https://place-hold.it/130x80" width="130" height="80" alt="">-->
-                <!--                </div>-->
-                <!--              </div>-->
-                <!--            </div>-->
-                <!--          </div>-->
-                <!--          <div class="card mb-4">-->
-                <!--            <div class="card-body px-4">-->
-                <!--              <div class="row">-->
-                <!--                <div class="col-12 col-md-8 col-lg-9">-->
-                <!--                  <h2 class="h2 pb-2">Дизайнер UI/UX</h2>-->
-                <!--                  <p class="mb-2">Бэкенд • Старший (Senior) • C# • ASP.NET MVC • MySQL • Git</p>-->
-                <!--                  <p>Radyushin & Co • Тольятти • Полный рабочий день</p>-->
-                <!--                  <p class="text-muted pt-1">9 декабря</p>-->
-                <!--                </div>-->
-                <!--                <div class="col-12 col-md-4 col-lg-3 d-flex align-items-end">-->
-                <!--                  <img src="https://place-hold.it/130x80" width="130" height="80" alt="">-->
-                <!--                </div>-->
-                <!--              </div>-->
-                <!--            </div>-->
-                <!--          </div>-->
             </div>
         </div>
     </section>

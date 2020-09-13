@@ -58,7 +58,12 @@ class CompaniesView(View):
 
 class VacancyView(View):
     def get(self, request, id):
-        return render(request, 'vacancy.html')
+        try:
+            vacancy = Vacancy.objects.get(pk=id)
+        except Vacancy.DoesNotExist:
+            raise Http404
+
+        return render(request, 'vacancy.html', {'vacancy': vacancy})
 
 
 def custom_handler404(request, exception):
