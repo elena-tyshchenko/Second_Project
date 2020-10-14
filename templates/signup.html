@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+{% load crispy_forms_tags %}
+
+<div class="col-10 col-md-6 col-lg-4 offset-lg-1">
+<h1 class="h1 text-center mx-auto mt-4 py-5">Джуманджи</h1>
+<p class="p text-center mx-auto mt-4 py-5">Создайте аккаунт</p>
+{% crispy form "bootstrap3" %}
+    <p class="p text-center mx-auto mt-4 py-5">Есть аккаунт?
+        <a href="{% url 'login' %}" class="nav-link">Войдите!</a>
+    </p>
+</div>
