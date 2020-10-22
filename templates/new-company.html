@@ -2,35 +2,25 @@
 {% block content %}
   <main class="container mt-3 pb-5">
     <div class="row mt-5">
-      <div class="col-12 col-lg-4">
-        <aside class="pt-3 pb-4 px-4 mb-5 card">
-          <h1 class="h4 pt-2 pb-2">Моя компания</h1>
-          <div class="nav flex-column nav-pills">
-            <a class="nav-link active" href="{% url 'company-edit' %}">1. Информация о&nbsp;компании</a>
-            <a class="nav-link" href="{% url 'vacancy-list' %}">2. Вакансии</a>
-          </div>
-        </aside>
-      </div>
-
       {% load crispy_forms_tags %}
 
-      <div class="col-12 col-lg-8">
+      <div class="col-12 col-lg-8" style="margin: auto;">
         <div class="card">
           <div class="card-body px-4 pb-4">
             <!-- Tab -->
             <section class="tab-pane fade show active">
-              <h2 class="h4 pt-2 pb-3">Информация о&nbsp;компании</h2>
+              <h2 class="h4 pt-2 pb-3">Создание новой компании</h2>
               {% if view %}
                 <p class="alert alert-info" role="alert">
-                  Информация о компании обновлена
+                  Компания успешно создана
                 </p>
               {% endif %}
               <form method="post" enctype="multipart/form-data">
-                  {% csrf_token %}
+                {% csrf_token %}
                 <div class="row">
                   <div class="col-12 col-md-6">
-                    <div class="form-group pb-2">
-                      <label class="mb-2 text-dark" for="name">Название компании</label>
+                    <div class="form-group pb-1">
+                      <label class="mb-2 text-dark pb-2" for="companyName">Название компании</label>
                       {{ form.name|as_crispy_field }}
                     </div>
                   </div>
@@ -39,12 +29,10 @@
                       <label class="mb-2 text-dark" for="companyLogo">Логотип</label>
                       <div class="row align-items-center">
                         <div class="col-6">
-                          <img src="{{ company.logo.url }}" alt="" style="max-width: 120px;height: auto;">
+                          <img src="https://place-hold.it/120x40" alt="" style="max-width: 120px; height: auto;">
                         </div>
-                        <div class="col-6" style="position: relative;">
-                          <div class="custom-file" style="">
-                            {{ form.logo|as_crispy_field }}
-                          </div>
+                        <div class="col-6" style="top: 8px">
+                          {{ form.logo|as_crispy_field }}
                         </div>
                       </div>
                     </div>
@@ -52,24 +40,24 @@
                 </div>
                 <div class="row">
                   <div class="col-12 col-md-6">
-                    <div class="form-group pb-2">
-                      <label class="mb-2 text-dark" for="employee_count">Количество человек в компании</label>
+                    <div class="form-group pb-1">
+                      <label class="mb-2 text-dark" for="companyTeam">Количество человек в компании</label>
                       {{ form.employee_count|as_crispy_field }}
                     </div>
                   </div>
                   <div class="col-12 col-md-6">
-                    <div class="form-group pb-2">
-                      <label class="mb-2 text-dark" for="location">География</label>
+                    <div class="form-group pb-1">
+                      <label class="mb-2 text-dark" for="companyLocation">География</label>
                       {{ form.location|as_crispy_field }}
                     </div>
                   </div>
                 </div>
-                <div class="form-group pb-2">
-                  <label class="mb-2 text-dark" for="description">Информация о компании</label>
+                <div class="form-group pb-1">
+                  <label class="mb-2 text-dark" for="companyInfo">Информация о&nbsp;компании</label>
                   {{ form.description|as_crispy_field }}
                 </div>
                 <div class="form-group">
-                  <input type="submit" class="btn btn-info" value="Сохранить">
+                  <input type="submit" class="btn btn-info" value="Создать">
                 </div>
               </form>
             </section>
