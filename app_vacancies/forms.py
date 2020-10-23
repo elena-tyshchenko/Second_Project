@@ -51,7 +51,6 @@ class SignupForm(UserCreationForm):
 
 
 class CompanyForm(UserCreationForm):
-
     class Meta:
         model = Company
 
@@ -64,8 +63,3 @@ class CompanyForm(UserCreationForm):
         self.helper = FormHelper()
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Сохранить', css_class='btn-primary col-lg-12'))
-
-        # включаем стили
-        # self.helper.form_class = 'form-horizontal'
-        self.helper.label_class = 'col-lg-2'
-        self.helper.field_class = 'col-lg-8'
