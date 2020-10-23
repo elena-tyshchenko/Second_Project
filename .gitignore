@@ -114,7 +114,7 @@ venv.bak/
 shared/
 static/
 imports/
-media/
+
 
 # temporary ignore files for formatter, linters
 setup.cfg
